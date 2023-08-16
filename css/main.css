@@ -1,0 +1,79 @@
+body {
+    font-family: sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header nav {
+    background-color: blue;
+    font-family: sans-serif;
+}
+
+header nav a {
+    text-align: center;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.card-link {
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header nav li {
+    padding: 10px;
+    display: inline-block;
+}
+
+header nav li.selected {
+    background-color: white;
+}
+
+header nav li.selected a {
+    color: black;
+}
+
+header nav li.unselected a {
+    color: white;
+}
+
+section a.card-link {
+
+}
+
+.card {
+    background-color: blue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    margin: 5%;
+    padding: 10px;
+}
+
+.card:click {
+    background-color: rebeccapurple;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+footer {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    color: gray;
+}
