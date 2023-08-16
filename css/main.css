@@ -74,7 +74,7 @@ footer {
     color: gray;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
     header nav li a {
         padding: 25px;
         font-size: 30px;
