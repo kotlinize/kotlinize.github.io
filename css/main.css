@@ -6,7 +6,7 @@ body {
 }
 
 header nav {
-    background-color: blue;
+    background-color:black;
     font-family: sans-serif;
 }
 
@@ -15,6 +15,7 @@ header nav a {
     font-family: sans-serif;
     text-decoration: none;
     font-weight: 300;
+    color: white;
 }
 
 .card-link {
@@ -34,15 +35,7 @@ header nav li {
 }
 
 header nav li.selected {
-    background-color: white;
-}
-
-header nav li.selected a {
-    color: black;
-}
-
-header nav li.unselected a {
-    color: white;
+    background-color: blue;
 }
 
 .card {
@@ -50,7 +43,7 @@ header nav li.unselected a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 10px;
-    margin: 5%;
+    margin: 10px 10px;
     padding: 10px;
 }
 
@@ -69,18 +62,20 @@ img {
 
 footer {
     text-align: center;
-    background-color: white;
+    background-color: black;
     padding: 10px;
-    color: gray;
+    color: lightgray;
 }
 
 @media only screen and (max-width: 600px) {
     header nav li a {
-        padding: 25px;
         font-size: 30px;
     }
     .card {
-        padding: 20px;
         font-size: 30px;
+        margin: 5%;
+    }
+    footer {
+        font-size: 25px;
     }
 }
