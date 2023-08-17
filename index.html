@@ -19,11 +19,16 @@
             </ul>
         </nav>
     </header>
-    <section id="section"></section>
+    <section id="section">
+        <div class="customLink">
+            <input type="url" id="customLinkTextField" placeholder="gozio://" onkeydown="customLinkKeyPress(event)"/>
+            <button onclick="customLinkSearchClicked()">Go</button>
+          </div>
+    </section>
     <footer class="footer" id="footer"></footer>
     <script src="js/main.js"></script>
     <script>
-        getGeneralLinks()
+        getGeneralLinks();
     </script>
 </body>
 

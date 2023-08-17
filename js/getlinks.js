@@ -1,11 +1,3 @@
-class GozioLink {
-
-    constructor(linkAddress, linkName) {
-        this.linkAddress = linkAddress;
-        this.linkName = linkName;
-    }
-}
-
 function getGeneralLinks() {
 
     const request = new Request("../json/links.json")
@@ -120,4 +112,17 @@ function getProviderLinks() {
                 section.appendChild(cardLink);
             }
         })
+}
+
+function customLinkSearchClicked() {
+    const linkToGoTo = String(document.getElementById("customLinkTextField").value);
+    if (linkToGoTo) {
+        window.location = linkToGoTo;
+    }
+}
+
+function customLinkKeyPress(event) {
+    if (event.keyCode == 13) {
+        customLinkSearchClicked();
+    }
 }
