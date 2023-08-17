@@ -2,7 +2,8 @@
     "general": [
         {
             "linkName": "Add Staff",
-            "linkAddress": "gozio://update/user/types?add=staff&remove=patient"
+            "linkAddress": "gozio://update/user/types?add=staff&remove=patient",
+            "description": "Only works on customer builds that have SSO enabled."
         },
         {
             "linkName": "Remove Staff",

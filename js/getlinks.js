@@ -1,41 +1,30 @@
-function getGeneralLinks() {
-
+function getLinks(type) {
+    const typeString = String(type)
     const request = new Request("../json/links.json")
 
     fetch(request)
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
-            for (item of data.general) {
-                var section = document.getElementById("section");
-
-                const cardLink = document.createElement("a");
-                cardLink.href = item.linkAddress;
-                cardLink.className = "card-link";
-
-                const card = document.createElement("div");
-                card.className = "card";
-
-                const cardContents = document.createElement("div");
-                cardContents.className = "container";
-                cardContents.textContent = item.linkName;
-
-                card.appendChild(cardContents);
-                cardLink.appendChild(card);
-                section.appendChild(cardLink);
+            var links = null;
+            switch (typeString) {
+                case "general":
+                    links = data.general
+                    break;
+                case "providers":
+                    links = data.providers
+                    break;
+                case "appointments":
+                    links = data.appointments
+                    break;
+                case "places":
+                    links = data.places
+                    break;
+                default:
+                    links = data.general
             }
-        })
-}
 
-function getAppointmentLinks() {
-
-    const request = new Request("../json/links.json")
-
-    fetch(request)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            for (item of data.appointments) {
+            for (item of links) {
                 var section = document.getElementById("section");
 
                 const cardLink = document.createElement("a");
@@ -45,69 +34,26 @@ function getAppointmentLinks() {
                 const card = document.createElement("div");
                 card.className = "card";
 
-                const cardContents = document.createElement("div");
-                cardContents.className = "container";
-                cardContents.textContent = item.linkName;
+                const cardLinkName = document.createElement("div");
+                cardLinkName.className = "container";
+                cardLinkName.textContent = item.linkName;
 
-                card.appendChild(cardContents);
-                cardLink.appendChild(card);
-                section.appendChild(cardLink);
-            }
-        })
-}
+                card.appendChild(cardLinkName);
 
-function getPlaceLinks() {
+                const cardLinkAddress = document.createElement("p");
+                cardLinkAddress.className = "containerDetails";
+                cardLinkAddress.textContent = item.linkAddress;
 
-    const request = new Request("../json/links.json")
+                card.appendChild(cardLinkAddress);
 
-    fetch(request)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            for (item of data.places) {
-                var section = document.getElementById("section");
+                if (item.description != null) {
+                    const cardLinkDescription = document.createElement("p");
+                    cardLinkDescription.className = "containerDetails";
+                    cardLinkDescription.textContent = item.description;
 
-                const cardLink = document.createElement("a");
-                cardLink.href = item.linkAddress;
-                cardLink.className = "card-link";
+                    card.appendChild(cardLinkDescription);
+                }
 
-                const card = document.createElement("div");
-                card.className = "card";
-
-                const cardContents = document.createElement("div");
-                cardContents.className = "container";
-                cardContents.textContent = item.linkName;
-
-                card.appendChild(cardContents);
-                cardLink.appendChild(card);
-                section.appendChild(cardLink);
-            }
-        })
-}
-
-function getProviderLinks() {
-
-    const request = new Request("../json/links.json")
-
-    fetch(request)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            for (item of data.providers) {
-                var section = document.getElementById("section");
-
-                const cardLink = document.createElement("a");
-                cardLink.href = item.linkAddress;
-                cardLink.className = "card-link";
-
-                const card = document.createElement("div");
-                card.className = "card";
-
-                const cardContents = document.createElement("div");
-                cardContents.className = "container";
-                cardContents.textContent = item.linkName;
-
-                card.appendChild(cardContents);
                 cardLink.appendChild(card);
                 section.appendChild(cardLink);
             }
@@ -126,3 +72,4 @@ function customLinkKeyPress(event) {
         customLinkSearchClicked();
     }
 }
+

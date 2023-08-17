@@ -87,6 +87,11 @@ input {
   input::placeholder {
     color: white;
   }
+
+  .containerDetails {
+    padding: 4px 0px;
+    margin: 0;
+  }
   
   button {
     background: #16bdae;
