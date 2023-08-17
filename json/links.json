@@ -9,12 +9,38 @@
             "linkAddress": "gozio-unc://update/user/types?add=patient&remove=staff"
         },
         {
-            "linkName": "Empty Link",
-            "linkAddress": "gozio://"
+            "linkName": "Download Data",
+            "linkAddress": "gozio://downloadData"
         },
         {
             "linkName": "About",
-            "linkAddress": "gozio://about"
+            "linkAddress": "gozio://open/aboutUs"
+        }
+    ],
+    "appointments": [
+        {
+            "linkName": "Appointment Reminder",
+            "linkAddress": "gozio://open/appointmentReminder?departmentId=123&providerName=John%20Doe&startTime=2020-11-02T01%3A00%3A00.000Z&endTIme=2020-11-02T02%3A00%3A00.000Z&contactLink=tel%3A12345678906"
+        }
+    ],
+    "places": [
+        {
+            "linkName": "Open Categories (67)",
+            "linkAddress": "gozio://open/categories/67"
+        },
+        {
+            "linkName": "Open Curated Lists (456)",
+            "linkAddress": "gozio://open/curatedLists/456"
+        },
+        {
+            "linkName": "Open Place Detail",
+            "linkAddress": "gozio://open/departments/233gozio://open/departments/233?isCollapsed=true"
+        }
+    ],
+    "providers": [
+        {
+            "linkName": "Open Doctors",
+            "linkAddress": "gozio://open/doctors"
         }
     ]
 }
