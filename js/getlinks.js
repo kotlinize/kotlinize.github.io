@@ -6,32 +6,32 @@ class GozioLink {
     }
 }
 
-const node = document.getElementById("footer");
-const footerText = document.createElement("p");
-footerText.textContent = "Gozio Links";
-node.appendChild(footerText);
+function getGeneralLinks() {
 
-const links = [
-    new GozioLink("gozio://open", "Just Opens"),
-    new GozioLink("https://www.google.com", "Google")
-];
+    const request = new Request("../json/links.json")
 
-var section = document.getElementById("section");
+    fetch(request)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+            for (item of data.general) {
+                var section = document.getElementById("section");
 
-for (link in links) {
-    const cardLink = document.createElement("a");
-    cardLink.href = links[link].linkAddress;
-    cardLink.className = "card-link";
 
-    const card = document.createElement("div");
-    card.className = "card";
+                const cardLink = document.createElement("a");
+                cardLink.href = item.linkAddress;
+                cardLink.className = "card-link";
 
-    const cardContents = document.createElement("div");
-    cardContents.className = "container";
-    cardContents.textContent = links[link].linkName;
+                const card = document.createElement("div");
+                card.className = "card";
 
-    card.appendChild(cardContents);
-    cardLink.appendChild(card);
-    section.appendChild(cardLink);
+                const cardContents = document.createElement("div");
+                cardContents.className = "container";
+                cardContents.textContent = item.linkName;
 
+                card.appendChild(cardContents);
+                cardLink.appendChild(card);
+                section.appendChild(cardLink);
+            }
+        })
 }

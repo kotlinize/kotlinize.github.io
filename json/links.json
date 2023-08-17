@@ -1,0 +1,20 @@
+{
+    "general": [
+        {
+            "linkName": "Add Staff",
+            "linkAddress": "gozio://update/user/types?add=staff&remove=patient"
+        },
+        {
+            "linkName": "Remove Staff",
+            "linkAddress": "gozio-unc://update/user/types?add=patient&remove=staff"
+        },
+        {
+            "linkName": "Empty Link",
+            "linkAddress": "gozio://"
+        },
+        {
+            "linkName": "About",
+            "linkAddress": "gozio://about"
+        }
+    ]
+}
