@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Redirect</title>
+    <style>
+
+        .app-icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .app-icon > img {
+            width: 250px;
+            height: 250px;
+            border-radius: 25%;
+            elevation: higher;
+        }
+
+        .download_app {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .download_app > div {
+            width: 200px;
+            height: 50px;
+        }
+
+        .download_app > div a {
+            position: relative;
+            display: block;
+        }
+
+        .download_app > div img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .app_store > img {
+            background-color: black;
+        }
+
+        .play_store > img {
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="app-icon">
+    <img id="appIconImage" src="" alt="App Icon">
+</div>
+<div id="app-container">
+    <div class="download_app">
+        <div class="play_store">
+            <a id="playStoreButton" href="#">
+                <img src="https://www.kotlinizer.com/images/google-play-badge.png" alt="Download App">
+            </a>
+        </div>
+
+        <div class="app_store">
+            <a id="appStoreButton" href="#">
+                <img src="https://www.kotlinizer.com/images/app-store-badge.svg" alt="Download App">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getQueryParams() {
+        var params = {};
+        var parser = document.createElement('a');
+        parser.href = window.location.href;
+        var query = parser.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            params[pair[0]] = decodeURIComponent(pair[1]);
+        }
+        return params;
+    }
+
+    function updateImages() {
+        const params = getQueryParams();
+        const appStoreButton = document.getElementById('appStoreButton');
+        const playStoreButton = document.getElementById('playStoreButton');
+        const appIcon = document.getElementById('appIconImage');
+
+        playStoreButton.href = 'https://play.google.com/store/apps/details?id=' + params.androidPackage;
+        appStoreButton.href = 'https://apps.apple.com/app/id' + params.iosAppId;
+        appIcon.src = params.appIcon; // URL passed as a parameter
+    }
+
+    updateImages();
+</script>
+</body>
+</html>
