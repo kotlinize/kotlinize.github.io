@@ -1,0 +1,50 @@
+body {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: 'Syne', sans-serif; 
+}
+
+.container {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center;     /* Centers content horizontally */
+}
+
+.container > img {
+    width: auto;          /* Adjusts width automatically */
+    height: 250px;         /* Fixed height for all images/badges */
+    object-fit: contain;  /* Ensures the image is scaled properly */
+    border-radius: 25%;
+}
+
+.app-icon {
+    width: 150px;
+    height: 150px;
+}
+
+.summary {
+    font-size: 16px;
+    max-width: 600px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.store-badges {
+    margin-top: 30px;
+}
+
+.badge {
+    height: 60px;
+    margin: 0 10px;
+}
